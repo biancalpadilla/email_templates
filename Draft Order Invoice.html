@@ -1,0 +1,453 @@
+{% capture email_title_template %}Complete your purchase{% endcapture %}
+{% capture email_subtitle_template %} Invoice {% endcapture %}
+{% capture email_text_template %}{% if item_count > 1 %}These items{% else %}This item{% endif %} will be reserved for you until: <strong>{{ reserve_inventory_until | date: "%B %d, %Y at %I:%M %p %Z" }}</strong>{% endcapture %}{% capture footer_column_1_heading %} Questions? {% endcapture %}
+{% capture footer_colum_1_text %} Reply to this email for help. {% endcapture %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{{ email_title_template }}</title>
+<script src="https://use.typekit.net/rak6ujb.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<link rel="stylesheet" type="text/css" href="/assets/notifications/styles.css">
+<style>
+.button__cell { background: {{ shop.email_accent_color }}; }
+a, a:hover, a:active, a:visited { color: {{ shop.email_accent_color }}; }
+</style>
+<style type="text/css">@media only screen and (max-width:480px){body,table,td,p,a,li,blockquote{-webkit-text-size-adjust:none !important}body{width:100% !important;min-width:100% !important}td[id=bodyCell]{padding:10px !important}table.kmMobileHide{display:none !important}table[class=kmTextContentContainer]{width:100% !important}table[class=kmBoxedTextContentContainer]{width:100% !important}td[class=kmImageContent]{padding-left:0 !important;padding-right:0 !important}img[class=kmImage]{width:100% !important}td.kmMobileStretch{padding-left:0 !important;padding-right:0 !important}table[class=kmSplitContentLeftContentContainer],table[class=kmSplitContentRightContentContainer],table[class=kmColumnContainer],td[class=kmVerticalButtonBarContentOuter] table[class=kmButtonBarContent],td[class=kmVerticalButtonCollectionContentOuter] table[class=kmButtonCollectionContent],table[class=kmVerticalButton],table[class=kmVerticalButtonContent]{width:100% !important}td[class=kmButtonCollectionInner]{padding-left:9px !important;padding-right:9px !important;padding-top:9px !important;padding-bottom:0 !important;background-color:transparent !important}td[class=kmVerticalButtonIconContent],td[class=kmVerticalButtonTextContent],td[class=kmVerticalButtonContentOuter]{padding-left:0 !important;padding-right:0 !important;padding-bottom:9px !important}table[class=kmSplitContentLeftContentContainer] td[class=kmTextContent],table[class=kmSplitContentRightContentContainer] td[class=kmTextContent],table[class=kmColumnContainer] td[class=kmTextContent],table[class=kmSplitContentLeftContentContainer] td[class=kmImageContent],table[class=kmSplitContentRightContentContainer] td[class=kmImageContent]{padding-top:9px !important}td[class="rowContainer kmFloatLeft"],td.rowContainer.kmFloatLeft,td[class="rowContainer kmFloatLeft firstColumn"],td.rowContainer.kmFloatLeft.firstColumn,td[class="rowContainer kmFloatLeft lastColumn"],td.rowContainer.kmFloatLeft.lastColumn{float:left;clear:both;width:100% !important}table[class=templateContainer],table[class="templateContainer brandingContainer"],table[class=templateRow]{max-width:600px !important;width:100% !important}h1{font-size:40px !important;line-height:130% !important}h2{font-size:32px !important;line-height:130% !important}h3{font-size:24px !important;line-height:130% !important}h4{font-size:18px !important;line-height:130% !important}td[class=kmTextContent]{font-size:14px !important;line-height:130% !important}td[class=kmTextBlockInner] td[class=kmTextContent]{padding-right:18px !important;padding-left:18px !important}table[class="kmTableBlock kmTableMobile"] td[class=kmTableBlockInner]{padding-left:9px !important;padding-right:9px !important}table[class="kmTableBlock kmTableMobile"] td[class=kmTableBlockInner] [class=kmTextContent]{font-size:14px !important;line-height:130% !important;padding-left:4px !important;padding-right:4px !important}}</style>
+</head>
+<body style="margin:0;padding:0;background-color:#DCEBF0">
+<center>
+<table align="center" border="0" cellpadding="0" cellspacing="0" id="bodyTable" width="100%" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;padding:0;background-color:#DCEBF0;height:100%;margin:0;width:100%">
+<!-- BACKGROUND COLOR -->
+<tbody>
+    <tr>
+        <td align="center" id="bodyCell" valign="top" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;padding-top:50px;padding-left:20px;padding-bottom:20px;padding-right:20px;border-top:0;height:100%;margin:0;width:100%">
+            <table border="0" cellpadding="0" cellspacing="0" class="templateContainer" width="600" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;border:1px solid #000;background-color:#fff;border-radius:0">
+                <!-- EMAIL START -->
+                <tbody>
+                    <tr>
+                        <td class="templateContainerInner" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0">
+                                <!-- BODY -->
+                                <tr>
+                                    <td align="center" valign="top" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0">
+                                        <table border="0" cellpadding="0" cellspacing="0" class="templateRow" width="100%" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="rowContainer kmFloatLeft" valign="top" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0">
+                                                        <!-- CARE CLUB LOGO -->
+                                                        <table border="0" cellpadding="0" cellspacing="0" class="kmImageBlock" width="100%" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0">
+                                                            <tbody class="kmImageBlockOuter">
+                                                                <tr>
+                                                                    <td class="kmImageBlockInner" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;padding:9px;padding-top:36px;padding-bottom:36px;background-color:#FFFFFF;" valign="top">
+                                                                        <table align="left" border="0" cellpadding="0" cellspacing="0" class="kmImageContentContainer" width="100%" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td class="kmImageContent" valign="top" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;padding:0;padding-top:0px;padding-bottom:0;padding-left:9px;padding-right:9px;text-align: center;">
+                                                                                        <img align="center" alt="" class="kmImage" src="https://d3k81ch9hvuctc.cloudfront.net/company/uCsxgU/images/d2a507c7-55b6-4b85-8aa6-b32192dbae02.png" width="75" style="border:0;height:auto;line-height:100%;outline:none;text-decoration:none;padding-bottom:0;display:inline;vertical-align:bottom;max-width:75px;padding:0px;background-color:#FFFFFF;" />
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <!-- CARE CLUB LOGO END -->
+                                                        <!-- TITLE & SUBTITLE -->
+                                                        <table border="0" cellpadding="0" cellspacing="0" class="kmTextBlock" width="100%" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0">
+                                                            <tbody class="kmTextBlockOuter">
+                                                                <tr>
+                                                                    <td class="kmTextBlockInner" valign="top" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;">
+                                                                        <table align="left" border="0" cellpadding="0" cellspacing="0" class="kmTextContentContainer" width="100%" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td class="kmTextContent" valign="top" style='border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;color:#222;font-family:"Helvetica Neue", Arial;font-size:14px;line-height:130%;text-align:left;padding-top:36px;padding-bottom:16px;padding-left:18px;padding-right:18px;'>
+                                                                                        <strong></strong>
+                                                                                        <p style="margin:0;padding-bottom:1em;text-align: center;"><span style="font-size:26px;">{{ email_title_template }}</span></p>
+                                                                                        <p style="margin:0;padding-bottom:0;text-align: center;"><span style="font-size:16px;">{{ email_subtitle_template }}<strong><span style="color: rgb(50, 55, 59); font-family: arial, sans-serif; text-align: center;">{{ name }}</span></strong></span></p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <!-- TITLE & SUBTITLE END -->
+                                                        <!-- TEXT -->
+                                                        <table border="0" cellpadding="0" cellspacing="0" class="kmTextBlock" width="100%" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0">
+                                                            <tbody class="kmTextBlockOuter">
+                                                                <tr>
+                                                                    <td class="kmTextBlockInner" valign="top" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;">
+                                                                        <table align="left" border="0" cellpadding="0" cellspacing="0" class="kmTextContentContainer" width="100%" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td class="kmTextContent" valign="top" style='border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;color:#222;font-family:"Helvetica Neue", Arial;font-size:14px;line-height:130%;text-align:left;padding:20px;'>
+                                                                                        <strong></strong>
+                                                                                        <p style="margin:0;padding-bottom:1em;padding-left:1em;padding-right:1em;"><span style="font-size:16px;">{{ email_text_template }}</span></p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <!-- TEXT END -->
+                                                        <!-- ADD TABLES HERE -->
+                                                        <table class="row content">
+                                                            <tr>
+                                                                <td class="content__cell">
+                                                                    <center>
+                                                                    <table class="container">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <h2>{{ email_title }}</h2>
+                                                                                {% if custom_message != blank %}
+                                                                                    <p>{{ custom_message }}</p>
+                                                                                    {% elsif reserve_inventory_until %}
+                                                                                    <p>{{ email_body }}</p>
+                                                                                {% endif %}
+                                                                                <table class="row actions">
+                                                                                    <tr>
+                                                                                        <td class="actions__cell">
+                                                                                            <table class="button main-action-cell">
+                                                                                                <tr>
+                                                                                                    <td class="button__cell"><a href="{{ invoice_url }}" class="button__text">Complete your purchase</a></td>
+                                                                                                </tr>
+                                                                                            </table>
+                                                                                            {% if shop.url %}
+                                                                                                <table class="link secondary-action-cell">
+                                                                                                    <tr>
+                                                                                                        <td class="link__cell"><a href="{{ shop.url }}" class="link__text"><span class='or'>or</span> Visit our store</a></td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            {% endif %}
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                    </center>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <table class="row section">
+                                                            <tr>
+                                                                <td class="section__cell">
+                                                                    <center>
+                                                                    <table class="container">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <h3>Order summary</h3>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                    <table class="container">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <table class="row">
+                                                                                    {% for line in line_items %}
+                                                                                        {% if item_count == 1 %}
+                                                                                            {% assign columnWrapperClass = 'order-list__item--single' %}
+                                                                                            {% elsif forloop.first == true %}
+                                                                                            {% assign columnWrapperClass = 'order-list__item--first' %}
+                                                                                            {% elsif forloop.last == true %}
+                                                                                            {% assign columnWrapperClass = 'order-list__item--last' %}
+                                                                                        {% else %}
+                                                                                            {% assign columnWrapperClass = '' %}
+                                                                                        {% endif %}
+                                                                                        <tr class="order-list__item {{columnWrapperClass}}">
+                                                                                            <td class="order-list__item__cell">
+                                                                                                <table>
+                                                                                                    <td>
+                                                                                                        {% if line.image %}
+                                                                                                            <img src="{{ line | img_url: 'compact_cropped' }}" align="left" width="60" height="60" class="order-list__product-image"/>
+                                                                                                        {% endif %}
+                                                                                                    </td>
+                                                                                                    <td class="order-list__product-description-cell">
+                                                                                                        {% if line.product.title %}
+                                                                                                            {% assign line_title = line.product.title %}
+                                                                                                        {% else %}
+                                                                                                            {% assign line_title = line.title %}
+                                                                                                        {% endif %}
+                                                                                                        <span class="order-list__item-title">{{ line_title }} × {{ line.quantity }}</span><br/>
+                                                                                                        {% if line.variant.title != 'Default Title' %}
+                                                                                                            <span class="order-list__item-variant">{{ line.variant.title }}</span>
+                                                                                                        {% endif %}
+                                                                                                    </td>
+                                                                                                    <td class="order-list__price-cell">
+                                                                                                        {% if line.original_line_price != line.line_price %}
+                                                                                                            <del class="order-list__item-original-price">{{ line.original_line_price | money }}</del>
+                                                                                                        {% endif %}
+                                                                                                        <p class="order-list__item-price">{{ line.line_price | money }}</p>
+                                                                                                    </td>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>{% endfor %}
+                                                                                    </table>
+                                                                                    <table class="row subtotal-lines">
+                                                                                        <tr>
+                                                                                            <td class="subtotal-spacer"></td>
+                                                                                            <td>
+                                                                                                <table class="row subtotal-table">
+                                                                                                    {% if discounts %}
+                                                                                                        {% capture discount_title %}Discount {% if discounts.first.code %}({{ discounts.first.code }}){% endif %}{% endcapture %}
+                                                                                                        <tr class="subtotal-line">
+                                                                                                            <td class="subtotal-line__title">
+                                                                                                                <p>
+                                                                                                                    <span>{{ discount_title }}</span>
+                                                                                                                </p>
+                                                                                                            </td>
+                                                                                                            <td class="subtotal-line__value">
+                                                                                                                <strong>{{ discounts_savings | money }}</strong>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                    {% endif %}
+                                                                                                    <tr class="subtotal-line">
+                                                                                                        <td class="subtotal-line__title">
+                                                                                                            <p>
+                                                                                                                <span>Subtotal</span>
+                                                                                                            </p>
+                                                                                                        </td>
+                                                                                                        <td class="subtotal-line__value">
+                                                                                                            <strong>{{ subtotal_price | money }}</strong>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr class="subtotal-line">
+                                                                                                        <td class="subtotal-line__title">
+                                                                                                            <p>
+                                                                                                                <span>Shipping</span>
+                                                                                                            </p>
+                                                                                                        </td>
+                                                                                                        <td class="subtotal-line__value">
+                                                                                                            <strong>{{ shipping_price | money }}</strong>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    {% for line in tax_lines %}
+                                                                                                        <tr class="subtotal-line">
+                                                                                                            <td class="subtotal-line__title">
+                                                                                                                <p>
+                                                                                                                    <span>{{ line.title }}</span>
+                                                                                                                </p>
+                                                                                                            </td>
+                                                                                                            <td class="subtotal-line__value">
+                                                                                                                <strong>{{ line.price | money }}</strong>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                    {% endfor %}
+                                                                                                </table>
+                                                                                                <table class="row subtotal-table subtotal-table--total">
+                                                                                                    <tr class="subtotal-line">
+                                                                                                        <td class="subtotal-line__title">
+                                                                                                            <p>
+                                                                                                                <span>Total</span>
+                                                                                                            </p>
+                                                                                                        </td>
+                                                                                                        <td class="subtotal-line__value">
+                                                                                                            <strong>{{ total_price | money_with_currency }}</strong>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                                {% assign transaction_size = 0 %}
+                                                                                                {% for transaction in transactions %}
+                                                                                                    {% unless transaction.kind == "capture" or transaction.kind == "void" %}
+                                                                                                    {% assign transaction_size = transaction_size | plus: 1 %}
+                                                                                                {% endunless %}
+                                                                                            {% endfor %}
+                                                                                            {% if transaction_size > 1 %}
+                                                                                                <table class="row subtotal-table">
+                                                                                                    <tr><td colspan="2" class="subtotal-table__line"></td></tr>
+                                                                                                    <tr><td colspan="2" class="subtotal-table__small-space"></td></tr>
+                                                                                                    {% for transaction in transactions %}
+                                                                                                        {% if (transaction.status == "success") and (transaction.kind == "authorization" or transaction.kind == "sale") %}
+                                                                                                            {% if transaction.payment_details.credit_card_company %}
+                                                                                                            {% capture transaction_name %}{{ transaction.payment_details.credit_card_company }} (ending in {{ transaction.payment_details.credit_card_last_four_digits }}){% endcapture %}
+                                                                                                        {% else %}
+                                                                                                        {% capture transaction_name %}{{ transaction.gateway | replace: "_", " " | capitalize }}{% endcapture %}
+                                                                                                    {% endif %}
+                                                                                                    <tr class="subtotal-line">
+                                                                                                        <td class="subtotal-line__title">
+                                                                                                            <p>
+                                                                                                                <span>{{transaction_name}}</span>
+                                                                                                            </p>
+                                                                                                        </td>
+                                                                                                        <td class="subtotal-line__value">
+                                                                                                            <strong>{{ transaction.amount | money }}</strong>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                {% endif %}
+                                                                                                {% if transaction.kind == 'refund' %}
+                                                                                                    {% if transaction.payment_details.credit_card_company %}
+                                                                                                        {% assign refund_method_title = transaction.payment_details.credit_card_company %}
+                                                                                                    {% else %}
+                                                                                                        {% assign refund_method_title = transaction.gateway %}
+                                                                                                    {% endif %}
+                                                                                                    <tr class="subtotal-line">
+                                                                                                        <td class="subtotal-line__title">
+                                                                                                            <p>
+                                                                                                                <span>Refund</span>
+                                                                                                                <br>
+                                                                                                                <small>{{ refund_method_title | capitalize }}</small>
+                                                                                                            </p>
+                                                                                                        </td>
+                                                                                                        <td class="subtotal-line__value">
+                                                                                                            <strong>- {{ transaction.amount | money }}</strong>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                {% endif %}
+                                                                                            {% endfor %}
+                                                                                        </table>
+                                                                                    {% endif %}
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            </center>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                {% if shipping_address or billing_address or shipping_method %}
+                                                    <table class="row section">
+                                                        <tr>
+                                                            <td class="section__cell">
+                                                                <center>
+                                                                <table class="container">
+                                                                    <tr>
+                                                                        <td>
+                                                                            <h3>Customer information</h3>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                                <table class="container">
+                                                                    <tr>
+                                                                        <td>
+                                                                            <table class="row">
+                                                                                <tr>
+                                                                                    {% if shipping_address %}
+                                                                                        <td class="customer-info__item">
+                                                                                            <h4>Shipping address</h4>
+                                                                                            <p>
+                                                                                                {{ shipping_address.name }}<br/>
+                                                                                                {{ shipping_address.address1 }}
+                                                                                                {% if shipping_address.address2 %}
+                                                                                                    <br/>{{ shipping_address.address2 }}
+                                                                                                {% endif %}
+                                                                                                <br/>{{ shipping_address.city }}, {{ shipping_address.province }} {{ shipping_address.zip }}
+                                                                                                <br/>{{ shipping_address.country }}
+                                                                                            </p>
+                                                                                        </td>
+                                                                                    {% endif %}
+                                                                                    {% if billing_address %}
+                                                                                        <td class="customer-info__item">
+                                                                                            <h4>Billing address</h4>
+                                                                                            <p>
+                                                                                                {{ billing_address.name }}<br/>
+                                                                                                {{ billing_address.address1 }}
+                                                                                                {% if billing_address.address2 %}
+                                                                                                    <br/>{{ billing_address.address2 }}
+                                                                                                {% endif %}
+                                                                                                <br/>{{ billing_address.city }}, {{ billing_address.province }} {{ billing_address.zip }}
+                                                                                                <br/>{{ billing_address.country }}
+                                                                                            </p>
+                                                                                        </td>
+                                                                                    {% endif %}
+                                                                                </tr>
+                                                                            </table>
+                                                                            {% if shipping_method %}
+                                                                                <table class="row">
+                                                                                    <tr>
+                                                                                        <td class="customer-info__item customer-info__item--last">
+                                                                                            <h4>Shipping method</h4>
+                                                                                            <p>{{ shipping_method.title }}<br/>{{ shipping_method.price | money }}</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            {% endif %}
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                                </center>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                {% endif %}
+                                                <!-- ADD TABLES HERE END -->
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- BODY END -->
+                        <!-- FOOTER -->
+                        <tr>
+                            <td align="center" valign="top" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0">
+                                <table border="0" cellpadding="0" cellspacing="0" class="templateRow" width="100%" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="rowContainer kmFloatLeft" valign="top" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0">
+                                                <table border="0" cellpadding="0" cellspacing="0" class="kmSplitBlock" width="100%" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0">
+                                                    <tbody class="kmSplitBlockOuter">
+                                                        <tr>
+                                                            <td class="kmSplitBlockInner" valign="top" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;padding-top:16px;padding-bottom:24px;background-color:#F1E4D9;padding-left:30px;padding-right:30px;">
+                                                                <table align="left" border="0" cellpadding="0" cellspacing="0" class="kmSplitContentOuter" width="100%" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="kmSplitContentInner" valign="top" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0">
+                                                                                <table align="left" border="0" cellpadding="0" cellspacing="0" class="kmSplitContentLeftContentContainer" width="252" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0">
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td class="kmTextContent" valign="top" style='border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;color:#222;font-family:"Helvetica Neue", Arial;font-size:14px;line-height:130%;text-align:left'>
+                                                                                                <p style="margin:0;padding-bottom:1em"><strong>{{ footer_column_1_heading }}</strong></p>
+                                                                                                <p style="margin:0;padding-bottom:0">{{ footer_colum_1_text }}</p>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                <table align="right" border="0" cellpadding="0" cellspacing="0" class="kmSplitContentRightContentContainer" width="252" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0">
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td class="kmTextContent" valign="top" style='border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;color:#222;font-family:"Helvetica Neue", Arial;font-size:14px;line-height:130%;text-align:left'>
+                                                                                                <p style="margin:0;padding-bottom:1em;text-align: right;"><strong>{{ shop.name }}</strong></p>
+                                                                                                <p style="margin:0;padding-bottom:1em;text-align: right;">{{ shop.email }}</p>
+                                                                                                <p style="margin:0;padding-bottom:0;text-align: right;">{{ shop.phone }}</p>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- FOOTER END -->
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+        <!-- EMAIL END -->
+    </table>
+</td>
+</tr>
+</tbody>
+<!-- BACKGROUND COLOR -->
+</table>
+</center>
+</body>
+</html>
